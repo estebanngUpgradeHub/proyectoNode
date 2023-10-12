@@ -8,6 +8,4 @@ router.post('/register', newGame);
 router.get('/', getGames);
 
 
-router.get('./', getGames);
-
 module.exports = router
