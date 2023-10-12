@@ -5,8 +5,8 @@ const {newGame, getGames, updateGame, deleteGame} = require('../controllers/jueg
 const router = express.Router();
 
 router.post('/register', newGame);
-router.delete('/', deleteGame);
-router.put('/', updateGame);
+router.delete('/:id', deleteGame);
+router.put('/:id', updateGame);
 router.get('/', getGames);
 
 
