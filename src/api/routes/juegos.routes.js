@@ -1,6 +1,6 @@
 const express = require('express');
 
-const {} = require('../controllers/juegos.controller'); 
+const {newGame} = require('../controllers/juegos.controller'); 
 
 const router = express.Router();
 
