@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
-//MongoDB URL
-// const url = 
+const url = "mongodb+srv://jesusp1490:Bajo141590-@cluster0.ahfdhot.mongodb.net/JuegosSteam?retryWrites=true&w=majority"
+
 
 const connectDb = async () => {
     try {
