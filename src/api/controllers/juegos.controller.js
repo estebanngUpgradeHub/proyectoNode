@@ -11,8 +11,15 @@ const newGame = async (req, res) => {
     }
 };
 
+const getGames = async (req, res) => {
+    try {
+        const allGames = await Games.find();
+        return res.status(200).json(allGames)
+    } catch (error) {
+        return res.json(error)
+}
+}
 
 
 
-
-module.exports = { newGame };
+module.exports = { newGame, getGames };
