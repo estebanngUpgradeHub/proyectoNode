@@ -13,12 +13,13 @@ const newGame = async (req, res) => {
 
 const getGames = async (req, res) => {
     try {
-        const allGames = await Games.find();
+        const allGames = await Juegos.find();
         return res.status(200).json(allGames)
     } catch (error) {
         return res.json(error)
 }
 }
+
 
 
 
