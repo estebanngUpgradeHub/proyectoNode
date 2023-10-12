@@ -5,7 +5,7 @@ const juegoSchema = new Schema({
     title: {type: String, required: true},
     description: {type: String, required: true},
     genre: {type: String, required: true},
-    playerNumber : {type: Number, required: true},
+    playerNumber : {type: Number},
     price: {type: Number, required: true},
     developer: {type: String, required: true},
     releaseDate: {type: Date, required: true},
