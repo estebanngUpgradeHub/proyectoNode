@@ -1,7 +1,7 @@
 const express = require('express');
 const {connectDb} = require('./src/utils/database');
 const routeJuegos = require('./src/api/routes/juegos.routes')
-const routesUser = require('./src/api/routes/user.routes')
+const routeUser = require('./src/api/routes/user.routes')
 
 
 const app = express();
