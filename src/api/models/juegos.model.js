@@ -8,7 +8,7 @@ const juegoSchema = new Schema({
     playerNumber : {type: Number, required: true},
     price: {type: Number, required: true},
     developer: {type: String, required: true},
-    realeaseDate: {type: Date, required: true},
+    releaseDate: {type: Date, required: true},
 },{
 collection: 'juego'
 });

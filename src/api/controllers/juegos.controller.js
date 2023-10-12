@@ -1,0 +1,1 @@
+const Juegos = require('../models/juegos.controller');
