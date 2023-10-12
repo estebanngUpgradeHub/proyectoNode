@@ -1,14 +1,12 @@
 const mongoose = require("mongoose");
 
-const url = "mongodb+srv://jesusp1490:Bajo141590-@cluster0.ahfdhot.mongodb.net/JuegosSteam?retryWrites=true&w=majority"
-
 
 const connectDb = async () => {
     try {
         //intenta conectarte a la base de datos
-        const dataBase = await mongoose.connect(url, {
+        const dataBase = await mongoose.connect(process.env.DB_URL, {
             useNewUrlParser : true,            
-            useUnifiedTopology : true,
+            useUnifiedTopology : true
     })
         const {name, host} = dataBase.connection;
         console.log(`Connected to ${name} DB in host:${host}`);
