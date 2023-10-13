@@ -51,6 +51,15 @@ const profileUser = async (req, res) => {
     }
 }
 
+const allUsers = async (req, res) => {
+    try {
+        const allUsers = await User.find();
+        return res.status(200).json(allUsers);
+    } catch (error) {
+        return res.status(500).json(error);
+    }
+};
 
 
-module.exports = { registerUser, loginUser, profileUser }
+
+module.exports = { registerUser, loginUser, profileUser, allUsers }
