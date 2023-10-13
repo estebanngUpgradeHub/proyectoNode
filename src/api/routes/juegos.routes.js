@@ -5,7 +5,7 @@ const {newGame, getGames, updateGame, deleteGame, getGameByTitle, getGameByGenre
 const router = express.Router();
 const upload = require("../../middleware/upload.file");
 
-router.post('/register',upload.single("image"), newGame);
+router.post('/register', upload.single("image"), newGame);
 router.delete('/:id', deleteGame);
 router.put('/:id', updateGame);
 router.get('/title/:title', getGameByTitle);
