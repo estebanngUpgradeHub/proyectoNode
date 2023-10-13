@@ -9,7 +9,7 @@ const juegoSchema = new Schema({
     price: {type: Number, required: true},
     developer: {type: String, required: true},
     releaseDate: {type: Date, required: true},
-    preview: {type: String, required: true},
+    image: {type: String},
 },{
 collection: 'juego'
 });
