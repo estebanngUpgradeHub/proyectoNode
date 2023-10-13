@@ -1,12 +1,15 @@
 const express = require('express');
 
-const {newGame, getGames, updateGame, deleteGame} = require('../controllers/juegos.controller'); 
+const {newGame, getGames, updateGame, deleteGame, getGameByTitle, getGameByGenre, getUnderFive } = require('../controllers/juegos.controller'); 
 
 const router = express.Router();
 
 router.post('/register', newGame);
 router.delete('/:id', deleteGame);
 router.put('/:id', updateGame);
+router.get('/title/:title', getGameByTitle);
+router.get('/genre/:genre', getGameByGenre);
+router.get('/priceUnderFive', getUnderFive);
 router.get('/', getGames);
 
 

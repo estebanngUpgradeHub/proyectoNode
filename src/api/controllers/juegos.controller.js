@@ -52,7 +52,45 @@ const deleteGame = async (req, res) => {
     }
 }
 
+//Get by title
+const getGameByTitle = async (req, res) => {
+    try {
+        const { title } = req.params
+        const titleGames = await Juegos.find({ title: title });
+        return res.status(200).json(titleGames);
+    } catch (error) {
+        return res.status(500).json(error);
+    }
+};
 
-module.exports = { newGame, getGames, updateGame, deleteGame };
+//Get by Genre
+const getGameByGenre = async (req, res) => {
+    try {
+        const { genre } = req.params
+        const genreGames = await Juegos.find({ genre: genre });
+        return res.status(200).json(genreGames);
+    } catch (error) {
+        return res.status(500).json(error);
+    }
+}
 
-//holi
+//Get by Price
+const getUnderFive = async (req, res) => {
+    try {
+        const allGames = await Juegos.find();
+        const priceUnderFive = [];
+
+        for (const game of allGames) {
+            if (game.price < 5)
+            priceUnderFive.push(game);
+        }
+        return res.status(200).json(priceUnderFive);
+
+    } catch (error) {
+
+        return res.status(500).json(error);
+    }
+}
+
+
+module.exports = { newGame, getGames, updateGame, deleteGame, getGameByTitle, getGameByGenre, getUnderFive };
