@@ -52,7 +52,7 @@ const updateGame = async (req, res) => {
 const deleteGame = async (req, res) => {
     try {
         const { id } = req.params;
-        const deleteGame = await Movies.findByIdAndDelete(id);
+        const deleteGame = await Juegos.findByIdAndDelete(id);
         if (!deleteGame) {
             return res.status(404).json({ message: "Game does not exist" })
         }
