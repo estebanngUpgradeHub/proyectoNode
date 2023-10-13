@@ -9,7 +9,7 @@ const juegoSchema = new Schema({
     price: {type: Number, required: true},
     developer: {type: String, required: true},
     releaseDate: {type: Date, required: true},
-    image: {type: String},
+    image: {type: String, default: ""},
     category: {type: String, enum: ['new', 'popular']}
 },{
 collection: 'juego'
