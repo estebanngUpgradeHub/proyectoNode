@@ -22,6 +22,7 @@ app.use(express.json());
 app.use('/juegos', routeJuegos);
 app.use('/users', routeUsers);
 
+
 const PORT = 5051;
 app.listen(PORT, () => {
     console.log('escuchando por el puerto ' + PORT);
