@@ -10,6 +10,7 @@ const juegoSchema = new Schema({
     developer: {type: String, required: true},
     releaseDate: {type: Date, required: true},
     image: {type: String},
+    category: {type: String, enum: ['new', 'popular']}
 },{
 collection: 'juego'
 });
