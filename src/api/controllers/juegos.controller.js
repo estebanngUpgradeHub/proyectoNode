@@ -67,7 +67,7 @@ const getGameByTitle = async (req, res) => {
 const getGameByGenre = async (req, res) => {
     try {
         const { genre } = req.params
-        const genreGames = await Juegos.find({ genre: genre });
+        const genreGames = await Juegos.find({ genre: { $regex: new RegExp(genre, 'i') } });
         return res.status(200).json(genreGames);
     } catch (error) {
         return res.status(500).json(error);
