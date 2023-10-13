@@ -85,6 +85,17 @@ const getGameByGenre = async (req, res) => {
     }
 }
 
+//Get by Category
+const getGameByCategory = async (req, res) => {
+    try {
+        const { category } = req.params
+        const categoryGames = await Juegos.find({ category: category });
+        return res.status(200).json(categoryGames);
+    } catch (error) {
+        return res.status(500).json(error);
+    }
+}
+
 //Get by Price
 const getUnderFive = async (req, res) => {
     try {
@@ -103,5 +114,39 @@ const getUnderFive = async (req, res) => {
     }
 }
 
+const getUnderTen = async (req, res) => {
+    try {
+        const allGames = await Juegos.find();
+        const priceUnderTen = [];
 
-module.exports = { newGame, getGames, updateGame, deleteGame, getGameByTitle, getGameByGenre, getUnderFive };
+        for (const game of allGames) {
+            if (game.price < 10)
+            priceUnderTen.push(game);
+        }
+        return res.status(200).json(priceUnderTen);
+
+    } catch (error) {
+
+        return res.status(500).json(error);
+    }
+}
+
+const getUnderTwenty = async (req, res) => {
+    try {
+        const allGames = await Juegos.find();
+        const priceUnderTwenty = [];
+
+        for (const game of allGames) {
+            if (game.price < 20)
+            priceUnderTwenty.push(game);
+        }
+        return res.status(200).json(priceUnderTwenty);
+
+    } catch (error) {
+
+        return res.status(500).json(error);
+    }
+}
+
+
+module.exports = { newGame, getGames, updateGame, deleteGame, getGameByTitle, getGameByGenre, getGameByCategory, getUnderFive, getUnderTen, getUnderTwenty };
