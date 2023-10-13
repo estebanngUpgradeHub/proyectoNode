@@ -4,6 +4,9 @@ const Juegos = require('../models/juegos.model');
 const newGame = async (req, res) => {
     try {
         const game = new Juegos(req.body);
+        if (req.file.path) {
+            game.image = req.file.path;
+        }
         const createdGame = await game.save();
         return res.status(201).json(createdGame);
     } catch (error) {
