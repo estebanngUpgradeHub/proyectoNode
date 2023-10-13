@@ -3,7 +3,8 @@ const Juegos = require('../models/juegos.model');
 //Post
 const newGame = async (req, res) => {
     try {
-        const game = new Juegos(req.body);
+        const body = req.body
+        const game = new Juegos(body);
         if (req.file.path) {
             game.image = req.file.path;
         }
@@ -28,15 +29,22 @@ const getGames = async (req, res) => {
 const updateGame = async (req, res) => {
     try {
         const { id } = req.params;
-        const gameBody = new Juegos(req.body);
+        const gameBody = {...req.body};
         gameBody._id = id;
+
+        if (req.file && req.file.path) {
+            gameBody.image = req.file.path;
+        } 
+
         const updateGame = await Juegos.findByIdAndUpdate(id, gameBody, { new: true });
+           
     if (!updateGame) {
         return res.status(404).json({ message: "Game does not exist" })
     }
     return res.status(200).json(updateGame)
 } catch (error) {
-
+    console.error(error); // Log the error for debugging.
+    return res.status(500).json({ message: "Internal Server Error" });
 }
 }
 

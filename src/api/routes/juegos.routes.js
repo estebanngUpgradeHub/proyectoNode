@@ -7,7 +7,7 @@ const upload = require("../../middleware/upload.file");
 
 router.post('/register', upload.single("image"), newGame);
 router.delete('/:id', deleteGame);
-router.put('/:id', updateGame);
+router.put('/:id', upload.single("image"), updateGame);
 router.get('/title/:title', getGameByTitle);
 router.get('/genre/:genre', getGameByGenre);
 router.get('/priceUnderFive', getUnderFive);
