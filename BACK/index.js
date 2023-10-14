@@ -5,15 +5,34 @@ const routeUsers = require('./src/api/routes/user.routes')
 const env = require('dotenv');
 env.config();
 
-const cloudinary = require("cloudinary").v2;
+const cors = require('cors');
+
 const app = express();
+
+// Allow requests from a specific origin (change this to match your web page's origin)
+const allowedOrigins = ['http://127.0.0.1:5500'];
+
+const corsOptions = {
+    origin: function (origin, callback) {
+        if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+};
+
+app.use(cors(corsOptions));
+
+const cloudinary = require("cloudinary").v2;
+
 //estas configuraciones nos sirven para recibir objetos de tipo json.
 app.use(express.json());
 
-cloudinary.config({ 
-    cloud_name: process.env.CLOUD_NAME, 
-    api_key: process.env.API_KEY, 
-    api_secret: process.env.API_SECRET, 
+cloudinary.config({
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.API_KEY,
+    api_secret: process.env.API_SECRET,
 });
 
 
