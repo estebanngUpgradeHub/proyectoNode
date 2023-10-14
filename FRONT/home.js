@@ -1,30 +1,18 @@
+let games = [];
+let currentIndex = 0; 
+
+const $carusel = document.querySelector('.foto_random'); 
+
 fetch('http://localhost:5051/juegos')
-  .then((response) => {
-    return response.json();
-  })
-  .then((games) => {
-    console.log(games);
-  });
+.then((response)=> response.json())
+.then((fetchedGames) => {
+  games = fetchedGames;
+  setInterval(updateCarusel, 3000);
+}); 
 
-  const $carusel = document.querySelector('.foto_random')
-  let allGames = [];
-  for (const game of allGames) {
-    const img$ = document.createElement('img');
-    img$.src = game.imagen; 
-    document.body.appendChild(`[class="carusel_foto"]`); 
-  }
+function updateCarusel(){
+  $carusel.setAttribute('src', games[currentIndex].image);
 
-
-
-async function getGames(){
-  let allGames = [];
-  for (let i = 0; i < 30; i++) {
-    const response = await fetch ('http://localhost:5051/juegos')
-    const resultado = await response.json()
-    allGames.push(resultado);
-  }
-  console.log(allGames)
-
-
-  return allGames;
+  currentIndex = (currentIndex + 1) % games.length;
 }
+
