@@ -5,13 +5,19 @@ main{
     background-color: $primary-color;
     display: flex;
     color: white;
+    position: relative;
+
 }
 
 .izquierda {
+    background-color: $primary-color;
     display: flex;
     flex-direction: column;
     width: 15%;
-    margin-left: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    z-index: 3;
+    
     
 }
 
@@ -42,6 +48,7 @@ main{
     margin-top: 10%;
     padding-left: 2%;
     padding-right: 2%;
+    
     
     
 
@@ -84,6 +91,7 @@ main{
     border-bottom-style: solid;
     border-color: white;
     border-width: 1px;
+    
 
         img {
             // width: 20%;
@@ -111,4 +119,36 @@ main{
     height: 20%;
     display: flex;
     align-items: center;
+}
+
+.derecha {
+    width: 85%;
+    background: linear-gradient(90deg, $morado-clarito, $primary-color);
+    
+    
+    
+}
+
+// .carusel_foto {
+//     width: 100%;
+//     height: 50%;   
+    
+// }
+
+
+.foto_random {
+    width: 100%;
+    height: 50%;
+    z-index: 0;
+}
+
+.difuminado {
+    position: absolute;
+    background: linear-gradient(180deg, $morado-clarito, $primary-color);
+    box-shadow: 0px 0px 40px 50px $morado-clarito;
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    // margin-left: ;
+    z-index: 1;
 }
