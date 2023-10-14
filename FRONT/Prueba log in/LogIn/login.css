@@ -55,13 +55,9 @@ h2 {
 }
 
 
-.inputbox input:focus ~ label {
+.form-field:focus + .form-label, .form-field:valid + .form-label {
     top: -5px;
-}
-
-.inputbox input:valid ~ label {
-    top: -5px;
-}
+  }
 
 .inputbox input {
     width: 100%;
