@@ -204,4 +204,25 @@ button {
 
 button:hover {
   background-color: #D27685;
+}
+
+.userInfo {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-bottom: 20%;
+  align-items: center;
+}
+.userInfo img {
+  width: 20%;
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+  border-radius: 40px;
+  background: linear-gradient(135deg, #37306B, #66347F, #9E4784, #D27685);
+  justify-content: center;
+  height: 20%;
+  margin-bottom: 2%;
 }/*# sourceMappingURL=oneGame.css.map */

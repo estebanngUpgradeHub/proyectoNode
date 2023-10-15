@@ -51,6 +51,16 @@ const profileUser = async (req, res) => {
     }
 }
 
+const getByEmail = async (req, res) => {
+    try {
+        const { email } = req.params
+        const emailUser = await User.find({email: email});
+        return res.status(200).json(emailUser);
+    } catch (error) {
+        return res.status(500).json(error);
+    }
+};
+
 const allUsers = async (req, res) => {
     try {
         const allUsers = await User.find();
@@ -62,4 +72,4 @@ const allUsers = async (req, res) => {
 
 
 
-module.exports = { registerUser, loginUser, profileUser, allUsers }
+module.exports = { getByEmail, registerUser, loginUser, profileUser, allUsers }
