@@ -51,7 +51,7 @@ loginButton.addEventListener("click", async (event) => {
       // Registration failed, display an error message
       console.error("Registration failed", data.message);
       alert(
-        'The email or password are incorrect, please try again. If you forgot your password please click the "forgot password" option.'
+        'The email or password are incorrect, please try again.'
       );
     }
   } catch (error) {
