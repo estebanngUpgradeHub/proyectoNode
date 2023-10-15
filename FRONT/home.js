@@ -1,6 +1,7 @@
 let games = [];
 let currentIndex = 0;
 
+
 const $carusel = document.querySelector('.foto_random');
 const $nuevos = document.querySelector('.nuevos');
 const $popular = document.querySelector('.populares');
@@ -45,6 +46,13 @@ function newGames() {
         const maxCharacters = 150; // Adjust as needed
         const descriptionText = newCategory[i].description;
 
+        $card.addEventListener('click', clickJuego)
+
+        function clickJuego(){
+        const gameID = newCategory[i]._id;
+        window.location.href = `oneGame.html?gameID=${gameID}`;
+        }
+
         if (descriptionText.length > maxCharacters) {
           $desc.textContent = descriptionText.substring(0, maxCharacters) + '...';
         } else {
@@ -58,6 +66,8 @@ function newGames() {
 
 }
 
+
+       
 
 function popularGames() {
   fetch('http://localhost:5051/juegos/category/popular')

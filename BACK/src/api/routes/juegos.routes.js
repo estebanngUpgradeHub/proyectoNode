@@ -1,6 +1,6 @@
 const express = require('express');
 
-const {newGame, getGames, updateGame, deleteGame, getGameByTitle, getGameByGenre, getGameByCategory, getUnderFive, getUnderTen, getUnderTwenty } = require('../controllers/juegos.controller'); 
+const {newGame, getGameByID, getGames, updateGame, deleteGame, getGameByTitle, getGameByGenre, getGameByCategory, getUnderFive, getUnderTen, getUnderTwenty } = require('../controllers/juegos.controller'); 
 
 const router = express.Router();
 const upload = require("../../middleware/upload.file");
@@ -15,6 +15,7 @@ router.get('/priceUnderFive', getUnderFive);
 router.get('/priceUnderTen', getUnderTen);
 router.get('/priceUnderTwenty', getUnderTwenty);
 router.get('/', getGames);
+router.get('/:id', getGameByID);
 
 
 module.exports = router

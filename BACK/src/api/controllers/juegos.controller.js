@@ -74,6 +74,17 @@ const getGameByTitle = async (req, res) => {
     }
 };
 
+//Get by ID
+const getGameByID = async (req, res) => {
+    try {
+        const { id } = req.params
+        const idGames = await Juegos.findById(id);
+        return res.status(200).json(idGames);
+    } catch (error) {
+        return res.status(500).json(error);
+    }
+};
+
 //Get by Genre
 const getGameByGenre = async (req, res) => {
     try {
@@ -149,4 +160,4 @@ const getUnderTwenty = async (req, res) => {
 }
 
 
-module.exports = { newGame, getGames, updateGame, deleteGame, getGameByTitle, getGameByGenre, getGameByCategory, getUnderFive, getUnderTen, getUnderTwenty };
+module.exports = { newGame, getGames, getGameByID, updateGame, deleteGame, getGameByTitle, getGameByGenre, getGameByCategory, getUnderFive, getUnderTen, getUnderTwenty };

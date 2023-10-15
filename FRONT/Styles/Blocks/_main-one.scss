@@ -149,13 +149,18 @@ main{
     z-index: 1;
 
 }
-
+.titulo {
+    font-size: 5rem;
+    margin-top: 5%;
+    padding-left: 3%;
+}
 .info {
     display: flex;
     margin-top: 4%;
-    width: 100%;
+    width: 90%;
     justify-content: space-around;
     padding-left: 2%;
+    height: 39%;
 
 
     h1 {
@@ -166,20 +171,22 @@ main{
 
 .aboutGame{
     width: 60%;
+    height: 100%;
     
 }
 
 .overview {
     width: 30%;
     padding-right: 5%;
+    height: 100%;
 }
 
 .gameDesc {
     padding-top: 5%;
+    padding-bottom: 2%;
 }
 
 .enlace{
-    margin-top: 5%;
     color: $color-salmon;
 }
 
@@ -190,15 +197,12 @@ main{
 }
 
 .bottom {
+    margin-top: 5%;
     display: flex;
     justify-content: space-between;
 }
 
-.titulo {
-    font-size: 5rem;
-    margin-top: 5%;
-    padding-left: 3%;
-}
+
 
 
     button {
