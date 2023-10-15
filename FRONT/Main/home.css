@@ -5,14 +5,18 @@
   text-decoration: none;
 }
 
+body {
+  background: linear-gradient(180deg, #66347F 60%, #37306B);
+}
+
 main {
   font-family: "Montserrat", sans-serif;
   width: 100%;
   height: 100vh;
-  background-color: #37306B;
   display: flex;
   color: white;
   position: relative;
+  overflow: auto;
 }
 
 .izquierda {
@@ -23,6 +27,8 @@ main {
   padding-left: 2%;
   padding-right: 2%;
   z-index: 3;
+  position: sticky;
+  top: 0px;
 }
 
 .logo {
@@ -86,7 +92,7 @@ main {
   border-width: 1px;
 }
 .tienda img {
-  height: 25%;
+  height: 10%;
 }
 
 .contact {
@@ -113,7 +119,9 @@ main {
 
 .derecha {
   width: 85%;
-  background: linear-gradient(90deg, #66347F, #37306B);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .foto_random {
@@ -123,11 +131,84 @@ main {
 }
 
 .difuminado {
-  position: absolute;
-  background: linear-gradient(180deg, #66347F, #37306B);
+  background-color: #66347F;
   box-shadow: 0px 0px 40px 50px #66347F;
   width: 100%;
-  height: 50%;
-  text-align: center;
+  height: 10%;
   z-index: 1;
+}
+.difuminado h2 {
+  font-size: 3rem;
+  padding-left: 2%;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 15%;
+  height: 600px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-color: #D27685;
+  color: black;
+  text-align: justify;
+  padding: 1%;
+}
+.card-content p {
+  padding-top: 2%;
+  font-size: 1.2rem;
+}
+.card-content h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  bottom: 0px;
+  border: 1px solid white;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #37306B, #66347F, #9E4784, #D27685);
+  height: 10%;
+  text-align: center;
+  color: white;
+}
+
+.card-content:hover {
+  border: 5px solid #9E4784;
+}
+
+.imagesNew {
+  width: 100%;
+  height: 40%;
+}
+
+.nuevos {
+  position: relative;
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  z-index: 2;
+  margin-top: 3%;
+}
+
+.populares {
+  position: relative;
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  z-index: 2;
+  margin-top: 3%;
+}
+
+.MVP {
+  padding-top: 4%;
+  font-size: 3rem;
+  padding-left: 2%;
 }/*# sourceMappingURL=home.css.map */
