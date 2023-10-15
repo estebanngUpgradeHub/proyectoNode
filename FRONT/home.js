@@ -142,11 +142,14 @@ popularGames();
 newGames();
 
 window.addEventListener("DOMContentLoaded", function () {
-  const urlParams = new URLSearchParams(window.location.search);
-  const loginSuccess = urlParams.get("login");
+  
+  
 
   const loggedIn = localStorage.getItem("loggedIn");
-
+  const usernames = localStorage.getItem("username");
+  const genders = localStorage.getItem("gender");
+  console.log(usernames);
+  console.log(genders)
 
     
 
@@ -176,10 +179,7 @@ window.addEventListener("DOMContentLoaded", function () {
       location.reload();
     }
 
-    const usernames = localStorage.getItem("username");
-    const genders = localStorage.getItem("gender");
-    console.log(usernames);
-    console.log(genders)
+    
     $showname.textContent = usernames;
     if (genders == "Female") {
       $userAvatar.setAttribute(

@@ -46,7 +46,10 @@ loginButton.addEventListener("click", async (event) => {
 
       console.log("Registration successful", data.message);
       localStorage.setItem("loggedIn", "true");
-      window.location.href = `home.html?login=success`;
+      setTimeout(() => {
+        window.location.href = `home.html?login=success`;
+      }, 1000);
+      
     } else {
       // Registration failed, display an error message
       console.error("Registration failed", data.message);
