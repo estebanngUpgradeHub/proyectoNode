@@ -209,4 +209,9 @@ main {
   justify-content: center;
   height: 20%;
   margin-bottom: 2%;
+}
+
+.derechaAll {
+  display: flex;
+  flex-direction: column;
 }/*# sourceMappingURL=allGames.css.map */
