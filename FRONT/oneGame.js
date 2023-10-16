@@ -5,7 +5,8 @@ const $genre = document.querySelector('.genre');
 const $dev = document.querySelector('.dev');
 const $date = document.querySelector('.date');
 const $player = document.querySelector('.player');
-const $button = document.querySelector('button')
+const $button = document.querySelector('button');
+const $enlace = document.querySelector('.enlace');
 
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -30,6 +31,7 @@ fetch(`http://localhost:5051/juegos/${gameID}`)
     } else if (!myJson.playerNumber){
         $player.textContent = "Unlimited"
     }
+    $enlace.setAttribute('href', myJson.officialLink)
   });
 
   $button.addEventListener('click', clickCompra);
