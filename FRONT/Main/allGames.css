@@ -247,4 +247,52 @@ input:hover {
 
 input:focus {
   outline: none;
+}
+
+.five {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #37306B, #66347F, #9E4784, #D27685);
+  justify-content: center;
+  height: 150%;
+  width: 10%;
+  border: 1px solid #D27685;
+  color: white;
+}
+
+.five:hover {
+  border: 1px solid white;
+}
+
+.ten {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #37306B, #66347F, #9E4784, #D27685);
+  justify-content: center;
+  height: 150%;
+  width: 10%;
+  border: 1px solid #D27685;
+  color: white;
+}
+
+.ten:hover {
+  border: 1px solid white;
+}
+
+.rich {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #37306B, #66347F, #9E4784, #D27685);
+  justify-content: center;
+  height: 150%;
+  width: 10%;
+  border: 1px solid #D27685;
+  color: white;
+}
+
+.rich:hover {
+  border: 1px solid white;
 }/*# sourceMappingURL=allGames.css.map */
