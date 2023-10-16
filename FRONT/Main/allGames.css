@@ -214,4 +214,37 @@ main {
 .derechaAll {
   display: flex;
   flex-direction: column;
+}
+
+.filter {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 3%;
+}
+
+input {
+  border: 1px solid #D27685;
+  background: linear-gradient(135deg, #9E4784, #D27685);
+  width: 30%;
+  border-radius: 8px;
+  height: 150%;
+}
+
+input::-moz-placeholder {
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+input::placeholder {
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+input:hover {
+  border: 1px solid white;
+}
+
+input:focus {
+  outline: none;
 }/*# sourceMappingURL=allGames.css.map */
