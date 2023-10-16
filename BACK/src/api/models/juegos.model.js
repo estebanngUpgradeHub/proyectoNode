@@ -10,7 +10,8 @@ const juegoSchema = new Schema({
     developer: {type: String, required: true},
     releaseDate: {type: Date, required: true},
     image: {type: String, default: ""},
-    category: {type: String, enum: ['new', 'popular']}
+    category: {type: String, enum: ['new', 'popular']},
+    officialLink: {type: String}
 },{
 collection: 'juego'
 });
