@@ -32,6 +32,12 @@ fetch(`http://localhost:5051/juegos/${gameID}`)
     }
   });
 
+  $button.addEventListener('click', clickCompra);
+
+  function clickCompra(){
+    window.location.href = 'compra.html'
+  }
+
   const $login = document.querySelector('.log');
   $login.addEventListener('click', clicklogin);
   
