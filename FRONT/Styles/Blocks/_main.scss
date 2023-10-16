@@ -160,12 +160,11 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 15%;
-    height: 500px;
+    width: 270px;
+    height: 450px;
     border: 1px solid #ccc;
     border-radius: 8px;
     overflow: hidden;
-    object-fit: cover;
     background-color: $color-salmon;
     color: black;
     text-align: justify;
@@ -198,19 +197,20 @@ main{
         color: white;
         text-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);
     }
+
+    .imagesNew {
+        object-fit: cover;
+        width: 100%;
+        
+        
+    }
 }
 
 .card-content:hover {
     border: 5px solid #9E4784;
 }
 
-.imagesNew {
 
-    width: 100%;
-    height: 40%;
-    
-    
-}
 
 .nuevos {
     position: relative;

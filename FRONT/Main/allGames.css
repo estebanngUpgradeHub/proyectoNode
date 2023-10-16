@@ -117,31 +117,8 @@ main {
   align-items: center;
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 15%;
-  height: 500px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  overflow: hidden;
-  -o-object-fit: cover;
-     object-fit: cover;
-  background-color: #D27685;
-  color: black;
-  text-align: justify;
-  padding: 1%;
-  margin: 1%;
-}
-
-.card:hover {
+.card-content:hover {
   border: 5px solid #9E4784;
-}
-
-.card img {
-  width: 100%;
-  height: 40%;
 }
 
 .derecha {
@@ -154,8 +131,8 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 15%;
-  height: 500px;
+  width: 270px;
+  height: 450px;
   border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
@@ -165,6 +142,12 @@ main {
   color: black;
   text-align: justify;
   padding: 1%;
+  margin: 1%;
+}
+.card-content img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
 }
 .card-content p {
   padding-top: 2%;
