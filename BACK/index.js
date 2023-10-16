@@ -35,11 +35,22 @@ cloudinary.config({
     api_secret: process.env.API_SECRET,
 });
 
+app.get('/', (req, res) => {
+    const apiLinks = `
+    <ul>
+    <li><a href="http://localhost:5051/juegos">Juegos</a></li>
+    <li><a href="http://localhost:5051/users">Users</a></li>
+    </ul>`
+    res.send(`<h1>Main API Route</h1>${apiLinks}`)
+});
+
 
 connectDb()
 app.use(express.json());
 app.use('/juegos', routeJuegos);
 app.use('/users', routeUsers);
+ 
+
 
 
 const PORT = 5051;

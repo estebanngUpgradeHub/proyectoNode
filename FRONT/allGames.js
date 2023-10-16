@@ -37,25 +37,63 @@ function allGames() {
                 displayGames(filteredGenre)
             });
             
-            const $five = document.querySelector('.five');
-            $five.addEventListener('click', function(){
-              let gamesFive = allGamess.filter(game => game.price < 5);
-              displayGames(gamesFive)
+            
+        });
+} 
+const $five = document.querySelector('.five');
+let underFive = []
+  fetch('http://localhost:5051/juegos/priceUnderFive')
+      .then((response) => {
+          return response.json();
+      })
+      .then((gamesCinco) => {
+          underFive = gamesCinco;
+
+            $five.addEventListener('click', function(){ 
+              displayGames(underFive)
             });
 
-            const $ten = document.querySelector('.ten');
-            $ten.addEventListener('click', function(){
-              let gamesTen = allGamess.filter(game => game.price < 10);
-              displayGames(gamesTen)
+      });
+
+      const $ten = document.querySelector('.ten');
+let underTen = []
+  fetch('http://localhost:5051/juegos/priceUnderTen')
+      .then((response) => {
+          return response.json();
+      })
+      .then((gamesdiez) => {
+          underTen = gamesdiez;
+
+            $ten.addEventListener('click', function(){ 
+              displayGames(underTen)
             });
+
+      });
+      
+      const $rich = document.querySelector('.rich');
+let underRich = []
+  fetch('http://localhost:5051/juegos/priceUnderTwenty')
+      .then((response) => {
+          return response.json();
+      })
+      .then((gamesRich) => {
+          underRich = gamesRich;
+
+            $rich.addEventListener('click', function(){ 
+              displayGames(underRich)
+            });
+
+      });
+      
+      
 
             const $twenty = document.querySelector('.rich');
             $twenty.addEventListener('click', function(){
               let gamesTwenty = allGamess.filter(game => game.price < 20);
               displayGames(gamesTwenty)
             });
-        });
-}
+
+          
 
 function displayGames(games) {
     gamesContainer.innerHTML = ''; 
